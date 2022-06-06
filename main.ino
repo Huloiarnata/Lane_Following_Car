@@ -20,8 +20,8 @@ void setup() {
   // setting serial communication at 9600 baud rate.
   Serial.begin(9600);
   // setting motors speed.
-  left.setSpeed(255);
-  right.setSpeed(255);
+  left.setSpeed(180);
+  right.setSpeed(180);
   
   // initalizing A1 pin for output.
   pinMode(A1,OUTPUT);
@@ -92,11 +92,13 @@ void loop() {
   }
 // motors turn right
   void mright(){
+  left.setSpeed(255);
   left.run(FORWARD);
   right.run(RELEASE);
     }
 // motors turn left
   void mleft(){
+  right.setSpeed(255);
   left.run(RELEASE);
   right.run(FORWARD);
   }
